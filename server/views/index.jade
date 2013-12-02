@@ -1,0 +1,12 @@
+extend layout
+
+block styles
+
+
+block scripts
+  script(src="app/app.js")
+  script(src="app/NodeAngularCtrl.js")
+
+block content
+  div(class="container", ng-app="node-angular", ng-controller="NodeAngularCtrl")
+    h1 {{app.name}}
