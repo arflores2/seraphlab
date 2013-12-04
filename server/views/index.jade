@@ -1,12 +1,41 @@
 extend layout
 
 block styles
-
+  link(rel="stylesheet", href="assets/css/index.css")
 
 block scripts
   script(src="app/app.js")
-  script(src="app/NodeAngularCtrl.js")
+  script(src="app/SeraphLabCtrl.js")
 
 block content
-  div(class="container", ng-app="node-angular", ng-controller="NodeAngularCtrl")
-    h1 {{app.name}}
+  div(class="container clearfix", ng-app="seraph-lab", ng-controller="SeraphLabCtrl")
+    h1(class="logo") {{app.name}}
+
+    div(class="navigation")
+      div(class="row")
+        div(class="navigation-box-fill three columns")
+          div(class="navigation-box-container")
+            div(class="navigation-box")
+              | Products
+        div(class="navigation-box-fill empty three columns")
+
+        div(class="navigation-box-fill selected three columns")
+          div(class="navigation-box-container")
+            div(class="navigation-box")
+              | Apps
+        div(class="navigation-box-fill empty three columns")
+
+      div(class="row")
+        div(class="navigation-box-fill empty three columns")
+
+        div(class="navigation-box-fill three columns")
+          div(class="navigation-box-container")
+            div(class="navigation-box")
+              | Techniques
+        div(class="navigation-box-fill empty three columns")
+
+      div(class="row")
+        div(class="navigation-box-fill three columns")
+          div(class="navigation-box-container")
+            div(class="navigation-box")
+              | {this}
