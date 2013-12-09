@@ -19,27 +19,28 @@ block content
 
         div(class="banner-item banner-logo four columns")
           h3(class="logo")
-            a(href="#home") {{app.name}}
+            a(href="#home", ng-click="app.scroll($event)") {{app.name}}
 
         div(class="banner-item nav-item offset-by-four two columns")
           h5 
-            a(href="#products") Products
+            a(href="#products", ng-click="app.scroll($event)") Products
 
         div(class="banner-item nav-item two columns")
           h5 
-            a(href="#apps") Apps
+            a(href="#apps", ng-click="app.scroll($event)") Apps
 
         div(class="banner-item nav-item two columns")
           h5 
-            a(href="#techniques") Techniques
+            a(href="#techniques", ng-click="app.scroll($event)") Techniques
 
         div(class="banner-item nav-item two columns")
           h5 
-            a(href="#this") {this}
+            a(href="#this", ng-click="app.scroll($event)") {this}
 
-    div#home(class="home-wrapper section")
+    div#home(class="home-wrapper section", ng-controller="HomeCtrl")
       div(class="container clearfix")
-        div(class="label") {{home.label}}
+        h2(class="label") {{home.label}}
+
 
     div#products(class="products-wrapper section clearfix", ng-controller="ProductsCtrl")
       div(class="container clearfix")
@@ -60,4 +61,3 @@ block content
     div#this(class="this-wrapper section clearfix", ng-controller="ThisCtrl")
       div(class="container clearfix")
         h2(class="label") {{_this.label}} 
-        div(sl-carousel, sl-carousel-items="_this.items", sl-carousel-item-offset="_this.offset")

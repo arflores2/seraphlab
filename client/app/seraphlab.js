@@ -2,10 +2,21 @@ angular.module('seraphlab', ['sl.carousel'])
 
   .controller('SeraphLabCtrl', function($scope) {
 
-    $scope.app = {};
-    $scope.app.name = "Seraph Lab";
+    $scope.app = {
+      name: 'Seraph Lab',
+      
+      carouselItemOffset: 50, 
 
-    $scope.app.carouselItemOffset = 50;
+      scroll: function($event) {
+        var $btn = $($event.target),
+            $location = $($btn.attr('href')),
+            offset = $location.offset().top - 86;
+
+        $('body').animate({
+          scrollTop: offset
+        }, 'slow');
+      }
+    };
   })
 
   .controller('HomeCtrl', function($scope) {
@@ -147,31 +158,9 @@ angular.module('seraphlab', ['sl.carousel'])
        * @var label
        * section label
        */
-      label: '{this}',
+      label: '{this}'
 
-      /**
-       * @var offset
-       * number of pixels to offset product items
-       */
-      offset: $scope.app.carouselItemOffset,
-
-      /**
-       * @var items
-       * product item list
-       */
-      items: [{
-        title: 'Test',
-        imgSrc: 'test.png',
-        description: 'This is a test'
-      }, {
-        title: 'Another Test',
-        imgSrc: 'anothertest.png',
-        description: 'One more time'
-      }, {
-        title: 'One More Test',
-        imgSrc: 'onemoretest.png',
-        description: 'Is this the last one?'
-      }] 
+      
     }
 
   })
