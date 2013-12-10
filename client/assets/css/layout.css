@@ -67,6 +67,14 @@
   	text-align: center;
   }
 
+  .banner .banner-logo a {
+    font-weight: bold;
+  }
+
+  .banner .banner-item a {
+    text-decoration: none;
+  }
+
   .banner .banner-item .logo {
   	color: white;
     margin: 0;
