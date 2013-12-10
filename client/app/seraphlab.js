@@ -1,21 +1,13 @@
-angular.module('seraphlab', ['sl.carousel'])
+angular.module('seraphlab', ['sl.carousel', 'sl.scroller'])
 
   .controller('SeraphLabCtrl', function($scope) {
 
     $scope.app = {
       name: 'Seraph Lab',
       
-      carouselItemOffset: 50, 
-
-      scroll: function($event) {
-        var $btn = $($event.target),
-            $location = $($btn.attr('href')),
-            offset = $location.offset().top - 86;
-
-        $('body').animate({
-          scrollTop: offset
-        }, 'slow');
-      }
+      carouselItemOffset: 50,
+      bannerTopOffset: 86,
+      bannerElId: 'banner'
     };
   })
 

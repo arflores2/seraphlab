@@ -6,6 +6,7 @@ block styles
 
 block scripts
 
+  script(src="vendor/sl-scroller/slScroller.js")
   script(src="vendor/sl-carousel/slCarousel.js")
   
   script(src="app/seraphlab.js")
@@ -14,28 +15,28 @@ block content
   
   div(ng-app="seraphlab", ng-controller="SeraphLabCtrl")
 
-    div(class="banner")
+    div(id="banner", class="banner")
       div(class="container clearfix")
 
         div(class="banner-item banner-logo four columns")
           h3(class="logo")
-            a(href="#home", ng-click="app.scroll($event)") {{app.name}}
+            a(href="#home", sl-scroller, sl-scroller-top-offset-el-id="app.bannerElId") {{app.name}}
 
         div(class="banner-item nav-item offset-by-four two columns")
           h5 
-            a(href="#products", ng-click="app.scroll($event)") Products
+            a(href="#products", sl-scroller, sl-scroller-top-offset-el-id="app.bannerElId") Products
 
         div(class="banner-item nav-item two columns")
           h5 
-            a(href="#apps", ng-click="app.scroll($event)") Apps
+            a(href="#apps", sl-scroller, sl-scroller-top-offset-el-id="app.bannerElId") Apps
 
         div(class="banner-item nav-item two columns")
           h5 
-            a(href="#techniques", ng-click="app.scroll($event)") Techniques
+            a(href="#techniques", sl-scroller, sl-scroller-top-offset-el-id="app.bannerElId") Techniques
 
         div(class="banner-item nav-item two columns")
           h5 
-            a(href="#this", ng-click="app.scroll($event)") {this}
+            a(href="#this", sl-scroller, sl-scroller-top-offset-el-id="app.bannerElId") {this}
 
     div#home(class="home-wrapper section", ng-controller="HomeCtrl")
       div(class="container clearfix")
